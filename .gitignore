@@ -1,0 +1,7 @@
+client-angular/.vscode
+client-angular/node_modules
+env
+server-fastapi/static
+server-fastapi/**/*__pycache__
+server-fastapi/.idea
+server-fastapi/.env
