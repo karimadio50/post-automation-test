@@ -18,7 +18,8 @@ generator = PostGeneratorService()
 
 
 @app.get("/generate-post")
-def read_root():
+def read_root(texte):
+   generator.generate_post_text(texte)
    return 
 
 @app.get("/get_files/{id}")
