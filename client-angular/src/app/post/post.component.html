@@ -1,0 +1,62 @@
+<header>
+  <h1 style="text-align: center; margin-top: 20px;">GENERATION DE POST ET D'IMAGE</h1>
+</header>
+<div class="container">
+  <div class="left-section">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          
+          <textarea matInput [formControl]="imageInput" 
+                placeholder="Entrer le texte de l'image ici"></textarea>
+         
+         
+          @if (imageInput.hasError('required')) {
+            <mat-error>Text is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+        <button (click)="generateImagePost()">Submit</button>
+      </form><br><br>
+
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          
+          <textarea matInput [formControl]="promptInput" 
+                placeholder="Entrer le prompt du post par ici"></textarea>
+         
+         
+          @if (promptInput.hasError('required')) {
+            <mat-error>Text is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+        <button (click)="generateTextPost()">Submit</button>
+      </form>
+    
+      <!--<textarea placeholder="Entrer le texte de l'image ici"></textarea>
+      <button>Submit</button>
+      <br><br>
+      <textarea placeholder="Enter le prompt du poste par ici"></textarea>
+      <button>Submit</button> !-->
+  </div>
+  <div class="right-section">
+    <form class="example-form">
+      <img [src]="imageUrl" alt="Generated Image">
+      <mat-form-field class="example-full-width">
+        
+        <textarea matInput [formControl]="imageInput" 
+              placeholder=""></textarea>
+       
+       
+        @if (promptGenerated.hasError('required')) {
+          <mat-error>Text generated is <strong>required</strong></mat-error>
+        }
+      </mat-form-field>
+      <button (click)="TextGenerated()">Submit</button>
+    </form>
+
+       <!-- <img [src]="imageUrl" alt="Generated Image">
+       <textarea placeholder=""></textarea> 
+      <button>Submit</button> !-->
+     
+  </div>
+</div>
+
